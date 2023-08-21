@@ -33,21 +33,19 @@ const Map = (props: Props) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {data.map((country: any, index: any) => {
-          return (
-            <Marker
-              key={index}
-              position={[country.countryInfo.lat, country.countryInfo.long]}
-            >
-              <Popup>
-                <p>Country: {country.country}</p>
-                <p>Active: {country.active}</p>
-                <p>Recovered: {country.recovered}</p>
-                <p>Deaths: {country.deaths}</p>
-              </Popup>
-            </Marker>
-          );
-        })}
+        {data.map((country: any, index: any) => (
+          <Marker
+            key={index}
+            position={[country.countryInfo.lat, country.countryInfo.long]}
+          >
+            <Popup>
+              <p>Country: {country.country}</p>
+              <p>Active: {country.active}</p>
+              <p>Recovered: {country.recovered}</p>
+              <p>Deaths: {country.deaths}</p>
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </div>
   );

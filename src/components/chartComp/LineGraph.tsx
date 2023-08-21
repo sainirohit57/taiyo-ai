@@ -95,11 +95,16 @@ const LineGraph = (props: Props) => {
   };
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full overflow-x-auto">
       <Line
         data={graphData}
         options={options}
-        style={{ width: "100%", height: "550px", minHeight: "400px" }}
+        style={{
+          width: "100%",
+          height: "550px",
+          minHeight: "400px",
+          minWidth: "800px",
+        }}
       />
     </div>
   );
